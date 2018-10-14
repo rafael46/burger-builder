@@ -332,12 +332,15 @@ module.exports = {
           // `MiniCSSExtractPlugin` extracts styles into CSS
           // files. If you use code splitting, async bundles will have their own separate CSS chunk file.
           // By default we support CSS Modules with the extension .module.css
+          // my changes her  --------------------------------------------------------------------------------rafael
           {
             test: cssRegex,
             exclude: cssModuleRegex,
             loader: getStyleLoaders({
               importLoaders: 1,
               sourceMap: shouldUseSourceMap,
+              modules: true,
+              localIdentName: '[name]__[local]__[hash:base64:5]'
             }),
             // Don't consider CSS imports dead code even if the
             // containing package claims to have no side effects.
